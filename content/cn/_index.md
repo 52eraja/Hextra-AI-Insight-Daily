@@ -11,7 +11,7 @@ cascade:
 
 ## AI资讯日报 2026/2/24
 
->  `AI资讯` | `每日早读` | `全网数据聚合` | `前沿科学探索` | `行业自由发声` | `开源创新力量` | `AI与人类未来` | [访问网页版↗️](https://ai.hubtoday.app/) | [进群交流🤙](https://source.hubtoday.app/logo/wechat-qun.jpg)
+>  `AI资讯` | `每日早读` | `全网数据聚合` | `前沿科学探索` | `行业自由发声` | `开源创新力量` | `AI与人类未来` | 
 
 ### **今日摘要**
 
@@ -170,9 +170,3 @@ Anthropic🚀发布了[AI流畅度指数(AI资讯)](https://www.anthropic.com/re
 
 ---
 
-## **AI资讯日报多渠道**
-
-| 💬 **微信公众号** | 📹 **抖音** |
-| --- | --- |
-| 公众号：何夕2077  |   [自媒体账号](https://www.douyin.com/user/MS4wLjABAAAAwpwqPQlu38sO38VyWgw9ZjDEnN4bMR5j8x111UxpseHR9DpB6-CveI5KRXOWuFwG)|
-| ![微信公众号](https://source.hubtoday.app/logo/wechatgzh_20260218215501_244.jpg) | ![情报站](https://source.hubtoday.app/logo/7fc30805eeb831e1e2baa3a240683ca3.md.png) |
