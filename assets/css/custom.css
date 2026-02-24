@@ -1,148 +1,381 @@
-/* 全局样式重置与基础配置 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* =================================================================== */
+/*                      Original User Styles                           */
+/* =================================================================== */
+
+h1:first-of-type {
+  /* display: none; */
+}
+
+code, kbd, samp, pre {
+  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,liberation mono,courier new,monospace;
+}
+
+.content ol li {
+  margin-bottom: 1.5rem;
+}
+
+.content ol li strong:first-of-type {
+  display: block;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.content ol li p strong:first-of-type {
+  display: block;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.content :where(img):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: .375rem;
+  max-width: 100%;
+  min-width: 100%;
+  /* height: clamp(250px, 35vh, 500px);
+  object-fit: cover; */
+}
+
+.content table tbody tr td :where(img):not(:where([class~=not-prose],[class~=not-prose] *)){
+  height: auto;
+}
+
+.content table {
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  display: table;
+}
+
+video {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: .375rem;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+br {
+    display: block;
+    content: "";
+    margin-top: 20px;
+}
+
+footer .hx-max-w-screen-xl{
+  max-width: 100%;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0.5rem;
+  width: 100%;
+  flex-direction: column;
+}
+
+.footer-container {
+  text-align: center;
+}
+
+.footer-links {
   list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-copyright {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.footer-links a,
+.footer-copyright a {
+  color: inherit;
   text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
-body {
-  font-family: "Microsoft YaHei", Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.6;
-  padding: 0 10px;
-  max-width: 1200px;
-  margin: 0 auto;
+.footer-copyright a:is(html[class~=dark] *){
+  color:#a1a8b4;
 }
 
-/* 网站头部样式 */
-.header {
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
-  margin-bottom: 20px;
-}
-
-.header .site-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #222;
-}
-
-/* 公告栏样式 */
-.notice {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  margin-bottom: 20px;
-  border-left: 4px solid #0066cc;
-}
-
-.notice p {
-  margin-bottom: 10px;
-}
-
-.notice a {
-  color: #0066cc;
-  font-weight: 500;
-}
-
-.notice a:hover {
+.footer-links a:hover,
+.footer-copyright a:hover {
+  color: #d8d8d8;
   text-decoration: underline;
 }
 
-/* 核心内容列表样式（适配网站资讯/推荐内容） */
-.content-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.ad-container,
+.google-auto-placed {
+  text-align: center;
+  max-width: 98%;
+  margin: 1rem auto;
+  overflow: hidden;
 }
 
-/* 单条内容卡片样式 */
-.content-card {
-  background-color: #fff;
-  padding: 18px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-  transition: transform 0.2s ease;
+.hextra-code-block pre {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
-.content-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-
-/* 日期样式 */
-.content-card .date {
-  font-size: 12px;
-  color: #999;
-  margin-bottom: 8px;
-  display: block;
-}
-
-/* 标题样式 */
-.content-card .title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #222;
-  margin-bottom: 10px;
-}
-
-.content-card .title a {
-  color: #222;
-}
-
-.content-card .title a:hover {
-  color: #0066cc;
-}
-
-/* 分类标签样式（适配人工智能/3D造物/城市漫游等标签） */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.tags .tag {
-  font-size: 12px;
-  padding: 3px 8px;
-  background-color: #f0f7ff;
-  color: #0066cc;
+.content :where(code):not(:where(.hextra-code-block code,[class~=not-prose],[class~=not-prose] *)) {
   border-radius: 4px;
+  font-style: normal;
+  padding: 0.2em 0.4em;
+  font-size: 0.875em;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
-/* 购物车按钮样式（适配网站🛒按钮） */
-.cart-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #ff6600;
+.content blockquote p a {
+    /* display: none; */
+}
+
+.hextra-max-footer-width {
+    max-width: 100%;
+}
+
+/* =================================================================== */
+/*                 [FIX v2] Light Theme Contrast Fix                   */
+/* =================================================================== */
+
+/*
+ * 通过重写 Hextra 主题的根CSS变量来从根本上修复浅色模式的对比度问题。
+ * 这比单独覆盖每个元素的样式更有效、更全面。
+ * :not(.dark) 选择器确保这些规则只在浅色模式下生效。
+*/
+html:not(.dark) {
+  /*
+   * -- 文本颜色修复 --
+   * Hextra 默认的灰色文本（如 --hx-text-gray-600 和 500）在白色背景上对比度不足。
+   * 我们将它们重新定义为更深的颜色。
+  */
+  --hx-text-gray-500: #4a5568;  /* 加深的中灰色 (原: #6b7280) */
+  --hx-text-gray-600: #2d3748;  /* 加深的深灰色 (原: #4b5563) */
+  --hx-text-gray-700: #1a202c;  /* 更深的近黑色 (原: #374151) */
+  --hx-text-gray-900: #111827;  /* 确保标题等为最深的颜色 */
+
+  /*
+   * -- 边框颜色修复 --
+   * 默认的浅灰色边框在白色背景上几乎看不见。
+   * 稍微加深它们可以提高组件的可见性。
+  */
+  --hx-border-gray-200: #d1d5db; /* 加深的浅边框 (原: #e5e7eb) */
+  --hx-border-gray-300: #b5bac0; /* 加深的中边框 (原: #d1d5db) */
+
+  /*
+   * -- 主题链接/焦点色修复 --
+   * 调整主色调的亮度和饱和度，使其在白色背景上更清晰。
+   * 这里我们使用一个更深的蓝色调。
+  */
+  --primary-hue: 212deg;         /* 深蓝色调 */
+  --primary-saturation: 82%;
+  --primary-lightness: 45%;      /* 降低亮度以增加对比度 */
+}
+
+/* 
+ * -- 行内代码块的再次确认修复 --
+ * 确保 `<code>` 标签即使不使用CSS变量也能有高对比度。
+*/
+html:not(.dark) .content :where(code):not(:where(.hextra-code-block code,[class~=not-prose],[class~=not-prose] *)) {
+  background-color: #eef0f2; /* 一个清晰可见的浅灰色背景 */
+  color: #1a202c;            /* 深色文本，确保可读性 */
+}
+
+
+/* =================================================================== */
+/*                      Dark Theme "Purple" Style                     */
+/* =================================================================== */
+html.dark {
+  --primary-hue: 270deg; /* 紫色色相 */
+  --primary-saturation: 100%;
+  --primary-lightness: 50%;
+}
+
+.hextra-footer:is(html[class~=dark] *),
+.nav-container:is(html[class~=dark] *),
+body:is(html[class~=dark] *) {
+  background-color: #1c1c1c;
+}
+
+.nav-container-blur:is(html[class~=dark] *) {
+    background-color: rgba(28, 28, 28, 0.8) !important;
+}
+
+.nav-container a:is(html[class~=dark] *),
+.nav-container svg:is(html[class~=dark] *) {
+  color: #ffffff;
+  transition: color 0.2s ease-in-out;
+}
+
+/* 橙色 #ff9900 替换为紫色 #9d4edd */
+.nav-container a:hover:is(html[class~=dark] *),
+.nav-container a:hover svg:is(html[class~=dark] *),
+.nav-container button:hover svg:is(html[class~=dark] *) {
+  color: #9d4edd !important;
+}
+
+.hamburger-menu:is(html[class~=dark] *) {
+  color: #ffffff;
+}
+/* 橙色 #ff9900 替换为紫色 #9d4edd */
+.hamburger-menu:hover:is(html[class~=dark] *) {
+  color: #9d4edd !important;
+}
+
+/* 橙色 #ff9900 替换为紫色 #9d4edd */
+.content :where(code):not(:where(.hextra-code-block code,[class~=not-prose],[class~=not-prose] *)):is(html[class~=dark] *) {
+  background-color: #2a2a2a;
+  color: #9d4edd;
+  border: 1px solid #444;
+}
+
+.hextra-code-block pre:is(html[class~=dark] *),
+.hextra-code-block .filename:is(html[class~=dark] *) {
+  background-color: #111;
+  border: 1px solid #444;
+}
+
+.hextra-code-block pre code span:is(html[class~=dark] *),
+.hextra-code-block pre code:is(html[class~=dark] *) {
+  font-style: normal !important;
+  color: #f0f0f0;
+}
+
+.dark .highlight .chroma .c, .dark .highlight .chroma .c1, .dark .highlight .chroma .cs { color: #8b949e !important; }
+.dark .highlight .chroma .k { color: #ff7b72 !important; }
+.dark .highlight .chroma .kc { color: #79c0ff !important; }
+.dark .highlight .chroma .s, .dark .highlight .chroma .s1, .dark .highlight .chroma .s2 { color: #a5d6ff !important; }
+.dark .highlight .chroma .nc { color: #f0883e !important; font-weight: 700; }
+.dark .highlight .chroma .nf { color: #d2a8ff !important; font-weight: 700; }
+
+/* 橙色 rgba(255, 153, 0, 0.15) 替换为紫色 rgba(157, 78, 221, 0.15) */
+.chroma .hl:is(html[class~=dark] *) {
+  background-color: rgba(157, 78, 221, 0.15) !important;
+}
+
+/* 橙色 #ff9900 替换为紫色 #9d4edd */
+.hextra-code-copy-btn:hover:is(html[class~=dark] *) {
+  background-color: #2a2a2a;
+  color: #9d4edd;
+}
+
+/* 橙色 #ff9900 替换为紫色 #9d4edd */
+.content :where(a):not(:where([class~=not-prose],[class~=not-prose] *)):is(html[class~=dark] *),
+.content :where(blockquote):not(:where([class~=not-prose],[class~=not-prose] *)):is(html[class~=dark] *) {
+  color: #9d4edd;
+  border-left-color: #9d4edd;
+}
+.content :where(a):not(:where([class~=not-prose],[class~=not-prose] *)):hover:is(html[class~=dark] *) {
   color: #fff;
+  text-decoration: underline;
+}
+.content :where(h2):not(:where([class~=not-prose],[class~=not-prose] *)):is(html[class~=dark] *) {
+  border-color: #444;
+}
+
+.hextra-card:is(html[class~=dark] *) {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: #f0f0f0;
+}
+/* 橙色 #ff9900 替换为紫色 #9d4edd */
+.hextra-card:hover:is(html[class~=dark] *) {
+  border-color: #9d4edd;
+  box-shadow: 0 0 15px rgba(157, 78, 221, 0.2);
+}
+
+/* 橙色 #ff9900 替换为紫色 #9d4edd */
+.hextra-badge:is(html[class~=dark] *) {
+  background-color: #9d4edd;
+  color: #000;
+  font-weight: bold;
+}
+
+/* 橙色 #ff9900 替换为紫色 #9d4edd */
+.sidebar-active-item:is(html[class~=dark] *) {
+  color: #9d4edd !important;
+  font-weight: bold;
+  background-color: rgba(157, 78, 221, 0.1);
   border-radius: 4px;
-  font-size: 14px;
-  margin: 10px 0;
-  cursor: pointer;
-  border: none;
+}
+/* 橙色 rgba(255, 153, 0, 0.1) 替换为紫色 rgba(157, 78, 221, 0.1) */
+.dark\:hover\:hx-bg-primary-100\/5:hover:is(html[class~=dark] *) {
+    background-color: rgba(157, 78, 221, 0.1);
+}
+/* 橙色 #ff9900 替换为紫色 #9d4edd */
+.sidebar-container a:hover:is(html[class~=dark] *) {
+  color: #9d4edd;
+}
+.sidebar-container a:is(html[class~=dark] *) {
+  color: #fff;
 }
 
-.cart-btn:hover {
-  background-color: #e55a00;
+/* 橙色 rgba(255, 153, 0, 0.15) 替换为紫色 rgba(157, 78, 221, 0.15) */
+.search-wrapper li .active:is(html[class~=dark] *) {
+    background-color: rgba(157, 78, 221, 0.15);
+}
+/* 橙色 #ff9900 替换为紫色 #9d4edd */
+.search-wrapper .match:is(html[class~=dark] *) {
+    color: #9d4edd;
+}
+.search-input:is(html[class~=dark] *) {
+  border-color: #444;
+}
+/* 橙色 #ff9900 替换为紫色 #9d4edd */
+.search-input:focus:is(html[class~=dark] *) {
+  border-color: #9d4edd;
 }
 
-/* 响应式适配（手机/平板） */
-@media (max-width: 768px) {
-  body {
-    padding: 0 8px;
-  }
-  .content-card {
-    padding: 14px;
-  }
-  .header .site-title {
-    font-size: 20px;
-  }
-  .content-card .title {
-    font-size: 16px;
-  }
+/* 橙色 #ff9900 替换为紫色 #9d4edd */
+.hextra-tabs-toggle[data-state=selected]:is(html[class~=dark] *) {
+  border-bottom: 2px solid #9d4edd;
+  color: #9d4edd;
+}
+
+/* 橙色 #f90 替换为紫色 #9d4edd */
+strong:is(html[class~=dark] *) {
+    color: #9d4edd;
+    padding: 3px;
+}
+
+/* 橙色 #f90 替换为紫色 #9d4edd */
+.content :where(h3):not(:where([class~=not-prose],[class~=not-prose] *)):is(html[class~=dark] *) {
+    color: #9d4edd;
+}
+
+/* =================================================================== */
+/*          [FIX v3] Light Theme Footer Contrast Fix               */
+/* =================================================================== */
+
+/*
+ * 目标：专门解决浅色主题下，页脚文本和链接颜色对比度不足的问题。
+ * 原因：页脚的链接颜色被设置为 `inherit`，它继承了 Hextra 主题
+ *      默认的浅灰色 body 文本颜色，导致在白色背景上难以阅读。
+*/
+
+/* 1. 为浅色模式下的整个页脚设置一个高对比度的基础文字颜色 */
+html:not(.dark) .footer-wrapper {
+  /* 使用深石板灰色，它在白色背景上具有非常高的对比度 (11.75:1) */
+  color: #2D3748;
+}
+
+/* 2. 为页脚链接在浅色模式下设置一个清晰的悬停 (hover) 效果 */
+/*    之前的 hover 颜色是为暗色模式设计的，在浅色模式下会看不见 */
+html:not(.dark) .footer-links a:hover,
+html:not(.dark) .footer-copyright a:hover {
+  /* 悬停时变为纯黑色，并保持下划线，提供清晰的视觉反馈 */
+  color: #000000;
 }
